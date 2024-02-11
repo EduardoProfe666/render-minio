@@ -1,4 +1,11 @@
-FROM minio/minio
-EXPOSE  9000  9002
+# Utiliza la última imagen oficial de MinIO
+FROM minio/minio:latest
+
+# Copia el script de entrada personalizado al contenedor
 COPY entrypoint.sh /opt/render/entrypoint.sh
-CMD ["server", "/data", "--console-address", ":9002"]
+
+# Hace que el script sea ejecutable
+RUN chmod +x /opt/render/entrypoint.sh
+
+# Establece el punto de entrada del contenedor
+ENTRYPOINT ["/opt/render/entrypoint.sh"]
