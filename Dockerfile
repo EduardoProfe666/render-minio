@@ -1,5 +1,7 @@
 FROM minio/minio
 
+EXPOSE 9002 9000
+
 # Configura las variables de entorno necesarias para MinIO
 ENV MINIO_ROOT_USER=minioadmin \
     MINIO_ROOT_PASSWORD=minioadmin \
