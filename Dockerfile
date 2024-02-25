@@ -5,4 +5,4 @@ FROM minio/minio
 CMD ["server", "/data", "--address", ":9090", "--console-address", ":9090"]
 
 # Exponer los puertos necesarios para el servicio S3 y la consola
-EXPOSE  9000  9090
+EXPOSE  9090
